@@ -1,0 +1,148 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px 10px;
+}
+
+.links {
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.links li {
+    margin-left: 20px;
+}
+
+.links a {
+    padding: 10px;
+    text-decoration: none;
+    color: #3F3F3F;
+    position: relative;
+}
+
+.links a:hover {
+    color: black;
+}
+
+.links a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.signup {
+    font-size: 12px;
+    border: 1px solid #8E8E8E;
+    color: #8E8E8E; 
+    border-radius: 3px; 
+    padding:10px 10px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.signup:hover {
+    background-color: #2995e2;
+    color: black;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+    margin-left:20px;
+    margin-right:50px;
+    margin-bottom: 50px;
+    margin-top:60px; 
+}
+
+.hero {
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.motto {
+    color: black;
+    font-size: 15px;
+}
+
+.call-to-actions {
+    display: flex;
+    align-items: center;
+}
+
+.start {
+    background-color: #2995e2;
+    color: white;
+    margin-right: 30px;
+    padding: 10px 10px;
+    font-size: 15px;
+    border: none;
+}
+
+.watch-story {
+    display: flex;
+    align-items: center;
+}
+
+.watch-link{
+    color:#3F3F3F;
+    font-size: 19px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.watch-link a:hover{
+    color: black;
+    background-color: white;
+}
+
+.watch-link a:hover::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -13px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.watch-story p {
+    margin-right: 10px;
+}
+
+.watch-story img {
+    width: 20px;
+    height: auto;
+}
+
+
+.image {
+    margin-left: auto;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.blue {
+    color: #2995e2;
+}

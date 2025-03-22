@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Abbey-Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cart-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Abbey-Store</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#cart" class="active">Cart <span class="cart-count">0</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="cart-page">
+        <div class="cart-container">
+            <h1>Shopping Cart</h1>
+            
+            <div class="cart-grid">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">₦0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">₦2,000</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="total-amount">₦0</span>
+                    </div>
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                    <button class="continue-shopping">Continue Shopping</button>
+                </div>
+            </div>
+
+            <div class="empty-cart hidden">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Your cart is empty</h2>
+                <p>Browse our categories and discover our best deals!</p>
+                <a href="index.html#shop" class="start-shopping">Start Shopping</a>
+            </div>
+        </div>
+
+        <!-- Recently Viewed Products -->
+        <section class="recently-viewed">
+            <h2>Recently Viewed</h2>
+            <div class="product-grid">
+                <!-- Recently viewed products will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@abbey-store.com</p>
+                <p>Phone: +234 XXX XXX XXXX</p>
+            </div>
+            <div class="delivery-info">
+                <h3>Delivery</h3>
+                <p>Worldwide Shipping Available</p>
+                <p>Air • Sea • Road</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abbey-Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cart-page.js"></script>
+</body>
+</html>

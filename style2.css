@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to left, rgb(216, 118, 5),(238, 341,240));
+}  
+.logo{
+    color: black;
+    margin-top: 25px;
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+    height: 50px;
+}
+.navLinks ul{
+    display:flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 500px;
+    flex-wrap: wrap;
+    margin-left: 340px;
+    margin-top: 40px;
+    
+}
+.navLinks ul a {
+    text-decoration: none;
+    color:hotpink;
+
+}
+.signUp{
+display: flex;
+width: 200px;
+justify-content: space-between;
+flex-wrap: wrap;
+height: 15px;
+margin-top: 40px;
+}
+.signUpButton{
+    color: rgb(252, 8, 138);
+    border-radius: px;
+    border: 5px;
+    background-color: rgb(18, 0, 0);
+}
+.h2{
+    height: 8px;
+    margin-bottom: 340px;
+    border-bottom: 40px;
+}

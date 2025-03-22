@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbey-Store - Premium Fashion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Abbey-Store</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <video class="hero-video" autoplay muted loop playsinline data-src="videos/hero-background.mp4">
+            <source type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Discover Your Style</h1>
+            <p>Premium Fashion for Every Occasion</p>
+            <a href="#shop" class="cta-button">Shop Now</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="categories" class="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <video class="category-video" muted loop playsinline data-src="videos/collections/casual-wear.mp4">
+                        <source type="video/mp4">
+                    </video>
+                    <div class="category-content">
+                        <h3>Casual Wear</h3>
+                        <a href="#casual" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <video class="category-video" muted loop playsinline data-src="videos/collections/formal-wear.mp4">
+                        <source type="video/mp4">
+                    </video>
+                    <div class="category-content">
+                        <h3>Formal Wear</h3>
+                        <a href="#formal" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <video class="category-video" muted loop playsinline data-src="videos/collections/accessories.mp4">
+                        <source type="video/mp4">
+                    </video>
+                    <div class="category-content">
+                        <h3>Accessories</h3>
+                        <a href="#accessories" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="featured">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="new-arrivals" class="new-arrivals">
+            <h2>New Arrivals</h2>
+            <div class="product-grid">
+                <!-- Product cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@abbey-store.com</p>
+                <p>Phone: +234 XXX XXX XXXX</p>
+            </div>
+            <div class="delivery-info">
+                <h3>Delivery</h3>
+                <p>Worldwide Shipping Available</p>
+                <p>Air • Sea • Road</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abbey-Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/video-handler.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

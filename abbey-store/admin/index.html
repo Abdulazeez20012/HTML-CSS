@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbey-Store Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <div class="logo">Abbey-Store Admin</div>
+            <ul class="nav-links">
+                <li><a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="#orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                <li><a href="#customers"><i class="fas fa-users"></i> Customers</a></li>
+                <li><a href="../index.html"><i class="fas fa-store"></i> View Store</a></li>
+            </ul>
+        </nav>
+
+        <main class="admin-main">
+            <section id="dashboard" class="dashboard-section">
+                <h2>Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        <div class="stat-info">
+                            <h3>Total Orders</h3>
+                            <p>156</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-box"></i>
+                        <div class="stat-info">
+                            <h3>Products</h3>
+                            <p>48</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3>Customers</h3>
+                            <p>287</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="stat-info">
+                            <h3>Revenue</h3>
+                            <p>₦1,458,900</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="products-section hidden">
+                <div class="section-header">
+                    <h2>Products</h2>
+                    <button class="add-product-btn"><i class="fas fa-plus"></i> Add Product</button>
+                </div>
+                <div class="product-filters">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <select class="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="dresses">Dresses</option>
+                        <option value="jeans">Jeans</option>
+                        <option value="suits">Suits</option>
+                        <option value="underwear">Underwear</option>
+                    </select>
+                </div>
+                <div class="product-grid">
+                    <!-- Product cards will be dynamically added here -->
+                </div>
+            </section>
+
+            <section id="orders" class="orders-section hidden">
+                <h2>Orders</h2>
+                <div class="order-filters">
+                    <input type="text" placeholder="Search orders..." class="search-input">
+                    <select class="status-filter">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Products</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Order rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="customers" class="customers-section hidden">
+                <h2>Customers</h2>
+                <div class="customer-filters">
+                    <input type="text" placeholder="Search customers..." class="search-input">
+                </div>
+                <div class="customers-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Orders</th>
+                                <th>Total Spent</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Customer rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Category</label>
+                    <select id="product-category" required>
+                        <option value="dresses">Dresses</option>
+                        <option value="jeans">Jeans</option>
+                        <option value="suits">Suits</option>
+                        <option value="underwear">Underwear</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Price (₦)</label>
+                    <input type="number" id="product-price" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-stock">Stock</label>
+                    <input type="number" id="product-stock" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-images">Images</label>
+                    <input type="file" id="product-images" multiple accept="image/*">
+                    <div class="image-preview"></div>
+                </div>
+                <div class="form-group">
+                    <label for="product-video">Product Video</label>
+                    <input type="file" id="product-video" accept="video/*">
+                </div>
+                <div class="form-group">
+                    <label>Badges</label>
+                    <div class="badge-options">
+                        <label><input type="checkbox" value="trending"> Trending</label>
+                        <label><input type="checkbox" value="new-arrival"> New Arrival</label>
+                        <label><input type="checkbox" value="best-seller"> Best Seller</label>
+                        <label><input type="checkbox" value="limited"> Limited Edition</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Save Product</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

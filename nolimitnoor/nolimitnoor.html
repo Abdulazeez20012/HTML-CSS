@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NOLIMITNOOR">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <title>NOLIMITNOOR | Luxury Fashion & Lifestyle</title>
+    <meta name="description" content="Discover luxury fashion at NOLIMITNOOR. Shop premium adult wear, kids fashion, designer footwear, and exclusive collections.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+
+      // Add to Home Screen Prompt
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        showInstallPromotion();
+      });
+
+      function showInstallPromotion() {
+        const installBtn = document.createElement('button');
+        installBtn.classList.add('install-button');
+        installBtn.textContent = 'Install App';
+        installBtn.addEventListener('click', (e) => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+        document.querySelector('.header').appendChild(installBtn);
+      }
+    </script>
+</head>
+<body>
+    <!-- Luxury Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item animate-fadeUp">Complimentary Global Shipping on Orders Over $500</div>
+            <div class="announcement-item animate-fadeUp">Exclusive VIP Preview: Spring/Summer 2025 Collection</div>
+            <div class="announcement-item animate-fadeUp">Book Your Private Shopping Experience</div>
+        </div>
+    </div>
+
+    <!-- Ultra-Premium Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand" href="#">
+                <h1 class="mb-0">NOLIMITNOOR</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#new-arrivals">New Arrivals</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="womenDropdown" role="button" data-bs-toggle="dropdown">
+                            Women
+                        </a>
+                        <div class="dropdown-menu mega-menu p-4">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Clothing</h6>
+                                    <a class="dropdown-item" href="#">Dresses</a>
+                                    <a class="dropdown-item" href="#">Tops</a>
+                                    <a class="dropdown-item" href="#">Pants</a>
+                                    <a class="dropdown-item" href="#">Outerwear</a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Accessories</h6>
+                                    <a class="dropdown-item" href="#">Bags</a>
+                                    <a class="dropdown-item" href="#">Jewelry</a>
+                                    <a class="dropdown-item" href="#">Scarves</a>
+                                    <a class="dropdown-item" href="#">Belts</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mega-menu-banner">
+                                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                             alt="Women's Collection" class="img-fluid">
+                                        <div class="banner-content">
+                                            <h3>Spring Collection</h3>
+                                            <p>Discover Timeless Elegance</p>
+                                            <a href="#" class="btn btn-outline-light">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menDropdown" role="button" data-bs-toggle="dropdown">
+                            Men
+                        </a>
+                        <div class="dropdown-menu mega-menu p-4">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Clothing</h6>
+                                    <a class="dropdown-item" href="#">Suits</a>
+                                    <a class="dropdown-item" href="#">Shirts</a>
+                                    <a class="dropdown-item" href="#">Pants</a>
+                                    <a class="dropdown-item" href="#">Outerwear</a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Accessories</h6>
+                                    <a class="dropdown-item" href="#">Watches</a>
+                                    <a class="dropdown-item" href="#">Belts</a>
+                                    <a class="dropdown-item" href="#">Ties</a>
+                                    <a class="dropdown-item" href="#">Wallets</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mega-menu-banner">
+                                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                             alt="Men's Collection" class="img-fluid">
+                                        <div class="banner-content">
+                                            <h3>Luxury Essentials</h3>
+                                            <p>Refined Style</p>
+                                            <a href="#" class="btn btn-outline-light">Explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="kidsDropdown" role="button" data-bs-toggle="dropdown">
+                            Kids
+                        </a>
+                        <div class="dropdown-menu mega-menu p-4">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Girls</h6>
+                                    <a class="dropdown-item" href="#">Dresses</a>
+                                    <a class="dropdown-item" href="#">Tops</a>
+                                    <a class="dropdown-item" href="#">Bottoms</a>
+                                    <a class="dropdown-item" href="#">Sets</a>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h6 class="dropdown-header">Boys</h6>
+                                    <a class="dropdown-item" href="#">Shirts</a>
+                                    <a class="dropdown-item" href="#">Pants</a>
+                                    <a class="dropdown-item" href="#">Suits</a>
+                                    <a class="dropdown-item" href="#">Sets</a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mega-menu-banner">
+                                        <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80" 
+                                             alt="Kids Collection" class="img-fluid">
+                                        <div class="banner-content">
+                                            <h3>Kids Collection</h3>
+                                            <p>Pure Sophistication</p>
+                                            <a href="#" class="btn btn-outline-light">View All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accessoriesDropdown" role="button" data-bs-toggle="dropdown">
+                            Accessories
+                        </a>
+                        <div class="dropdown-menu mega-menu p-4">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h6 class="dropdown-header">Categories</h6>
+                                    <a class="dropdown-item" href="#">Bags</a>
+                                    <a class="dropdown-item" href="#">Jewelry</a>
+                                    <a class="dropdown-item" href="#">Watches</a>
+                                    <a class="dropdown-item" href="#">Sunglasses</a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h6 class="dropdown-header">Collections</h6>
+                                    <a class="dropdown-item" href="#">New Arrivals</a>
+                                    <a class="dropdown-item" href="#">Best Sellers</a>
+                                    <a class="dropdown-item" href="#">Limited Edition</a>
+                                    <a class="dropdown-item" href="#">Sale</a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mega-menu-banner">
+                                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80" 
+                                             alt="Accessories Collection" class="img-fluid">
+                                        <div class="banner-content">
+                                            <h3>Accessories</h3>
+                                            <p>Complete Your Look</p>
+                                            <a href="#" class="btn btn-outline-light">Shop Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sale">Sale</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto">
+                    <div class="nav-item">
+                        <a class="nav-link" href="#search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="#wishlist">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="#cart">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-link" href="#account">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-content">
+            <button class="close-search">
+                <i class="fas fa-times"></i>
+            </button>
+            <form class="search-form">
+                <input type="text" placeholder="Search for products..." class="search-input">
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div class="trending-searches">
+                <h6>Trending Searches</h6>
+                <div class="trending-tags">
+                    <a href="#">Summer Dresses</a>
+                    <a href="#">Men's Suits</a>
+                    <a href="#">Kids Sets</a>
+                    <a href="#">Designer Shoes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80">
+                <source src="videos/hero-background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container-fluid px-lg-5">
+            <div class="hero-content text-center">
+                <h1 class="hero-title display-1">NOLIMITNOOR</h1>
+                <p class="hero-subtitle h3 mb-4">Curated Luxury Fashion</p>
+                <div class="hero-cta">
+                    <a href="#new-arrivals" class="btn btn-outline-light btn-lg px-5">Discover Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories py-5">
+        <div class="container-fluid px-lg-5">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="category-card large" data-video-preview="videos/collections/adult-collection.mp4">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Adult Collection" class="category-image">
+                        <div class="category-content text-center">
+                            <h3 class="h2 mb-3">Adult Collection</h3>
+                            <p class="lead mb-4">Timeless Elegance</p>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="category-card" data-video-preview="videos/collections/kids-collection.mp4">
+                                <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" 
+                                     alt="Kids Collection" class="category-image">
+                                <div class="category-content text-center">
+                                    <h3 class="h2 mb-3">Kids Collection</h3>
+                                    <p class="lead mb-4">Pure Sophistication</p>
+                                    <a href="#" class="btn btn-outline-light btn-lg px-4">Discover</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="category-card" data-video-preview="videos/collections/footwear-collection.mp4">
+                                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Footwear Collection" class="category-image">
+                                <div class="category-content text-center">
+                                    <h3 class="h2 mb-3">Footwear</h3>
+                                    <p class="lead mb-4">Refined Steps</p>
+                                    <a href="#" class="btn btn-outline-light btn-lg px-4">View All</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products py-5 bg-light">
+        <div class="container-fluid px-lg-5">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4 mb-3">New Arrivals</h2>
+                <p class="lead text-muted">Curated Excellence</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card" data-video-preview="videos/products/silk-dress-preview.mp4" data-badges="new-arrival,trending">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2020&q=80" 
+                                 data-src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2020&q=80" 
+                                 alt="Silk Evening Dress"
+                                 width="1200" height="1200"
+                                 class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-light mb-2 quick-view">Quick View</button>
+                                <button class="btn btn-outline-light mb-2 add-to-wishlist"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-outline-light video-preview"><i class="fas fa-play"></i></button>
+                            </div>
+                            <div class="product-badges">
+                                <span class="badge bg-danger">New</span>
+                                <span class="badge bg-primary">Trending</span>
+                            </div>
+                        </div>
+                        <div class="product-details p-3">
+                            <h3 class="h5 mb-2">Silk Evening Dress</h3>
+                            <p class="price h4 mb-3">$1,890</p>
+                            <div class="product-rating">
+                                <div class="stars mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half text-warning"></i>
+                                </div>
+                                <span class="review-count text-muted">(24 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card" data-video-preview="videos/products/cashmere-preview.mp4" data-badges="best-seller">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2005&q=80" 
+                                 data-src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2005&q=80" 
+                                 alt="Cashmere Sweater"
+                                 width="1200" height="1200"
+                                 class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-light mb-2 quick-view">Quick View</button>
+                                <button class="btn btn-outline-light mb-2 add-to-wishlist"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-outline-light video-preview"><i class="fas fa-play"></i></button>
+                            </div>
+                            <div class="product-badges">
+                                <span class="badge bg-success">Best Seller</span>
+                            </div>
+                        </div>
+                        <div class="product-details p-3">
+                            <h3 class="h5 mb-2">Cashmere Sweater</h3>
+                            <p class="price h4 mb-3">$890</p>
+                            <div class="product-rating">
+                                <div class="stars mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <span class="review-count text-muted">(42 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card" data-video-preview="videos/products/handbag-preview.mp4" data-badges="limited">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80" 
+                                 data-src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80" 
+                                 alt="Leather Handbag"
+                                 width="1200" height="1200"
+                                 class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-light mb-2 quick-view">Quick View</button>
+                                <button class="btn btn-outline-light mb-2 add-to-wishlist"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-outline-light video-preview"><i class="fas fa-play"></i></button>
+                            </div>
+                            <div class="product-badges">
+                                <span class="badge bg-warning text-dark">Limited Edition</span>
+                            </div>
+                        </div>
+                        <div class="product-details p-3">
+                            <h3 class="h5 mb-2">Leather Handbag</h3>
+                            <p class="price h4 mb-3">$2,190</p>
+                            <div class="product-rating">
+                                <div class="stars mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                </div>
+                                <span class="review-count text-muted">(18 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card" data-video-preview="videos/products/coat-preview.mp4" data-badges="trending">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80" 
+                                 data-src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1936&q=80" 
+                                 alt="Wool Coat"
+                                 width="1200" height="1200"
+                                 class="img-fluid">
+                            <div class="product-overlay">
+                                <button class="btn btn-light mb-2 quick-view">Quick View</button>
+                                <button class="btn btn-outline-light mb-2 add-to-wishlist"><i class="fas fa-heart"></i></button>
+                                <button class="btn btn-outline-light video-preview"><i class="fas fa-play"></i></button>
+                            </div>
+                            <div class="product-badges">
+                                <span class="badge bg-primary">Trending</span>
+                            </div>
+                        </div>
+                        <div class="product-details p-3">
+                            <h3 class="h5 mb-2">Wool Coat</h3>
+                            <p class="price h4 mb-3">₦6,000</p>
+                            <div class="product-rating">
+                                <div class="stars mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half text-warning"></i>
+                                </div>
+                                <span class="review-count text-muted">(31 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Experience -->
+    <section class="luxury-experience">
+        <div class="container-fluid px-lg-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="experience-content animate-fadeUp">
+                        <h2 class="display-text">The Art of Luxury</h2>
+                        <p class="lead">Experience fashion that transcends time. Each piece is meticulously crafted to perfection.</p>
+                        <a href="#" class="btn btn-primary">Book Private Showing</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="experience-gallery animate-scaleIn">
+                        <img src="https://placehold.co/1200x800/0B3C1A/FFD700.png?text=Luxury+Experience&font=playfair+display&bold=true" alt="Luxury Experience" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Collection -->
+    <section class="kids-collection py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="display-4">Little Luxuries</h2>
+                <p class="text-muted">Elegant styles for your little ones</p>
+            </div>
+
+            <!-- Featured Categories -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="category-card">
+                        <div class="category-media">
+                            <img src="https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1626&q=80" 
+                                 alt="Girls Collection" class="img-fluid">
+                            <div class="category-content">
+                                <h3>Girls Collection</h3>
+                                <p>Discover enchanting dresses, sets & accessories</p>
+                                <a href="#" class="btn btn-outline-light">Shop Girls</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="category-card">
+                        <div class="category-media">
+                            <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80" 
+                                 alt="Boys Collection" class="img-fluid">
+                            <div class="category-content">
+                                <h3>Boys Collection</h3>
+                                <p>Stylish suits, sets & casual wear</p>
+                                <a href="#" class="btn btn-outline-light">Shop Boys</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Products -->
+            <div class="row g-4">
+                <!-- Girls Dress -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-media">
+                            <div class="product-badge new">New</div>
+                            <img src="https://images.unsplash.com/photo-1603912699214-92627f304eb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" 
+                                 alt="Floral Party Dress" class="img-fluid">
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="action-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4>Floral Party Dress</h4>
+                            <div class="product-price">₦89.99</div>
+                            <div class="product-colors mt-2">
+                                <span class="color-dot" style="background: #FFB6C1;"></span>
+                                <span class="color-dot" style="background: #87CEEB;"></span>
+                                <span class="color-dot" style="background: #DDA0DD;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boys Suit -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-media">
+                            <div class="product-badge trending">Trending</div>
+                            <img src="https://images.unsplash.com/photo-1622290291427-ad88ea10966c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80" 
+                                 alt="Classic Boy's Suit" class="img-fluid">
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="action-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4>Classic Boy's Suit</h4>
+                            <div class="product-price">₦129.99</div>
+                            <div class="product-colors mt-2">
+                                <span class="color-dot" style="background: #000;"></span>
+                                <span class="color-dot" style="background: #1E2F3D;"></span>
+                                <span class="color-dot" style="background: #4A4A4A;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Girls Set -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-media">
+                            <div class="product-badge best">Best Seller</div>
+                            <img src="https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1626&q=80" 
+                                 alt="Summer Dress Set" class="img-fluid">
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="action-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4>Summer Dress Set</h4>
+                            <div class="product-price">₦79.99</div>
+                            <div class="product-colors mt-2">
+                                <span class="color-dot" style="background: #FFF5EE;"></span>
+                                <span class="color-dot" style="background: #F0F8FF;"></span>
+                                <span class="color-dot" style="background: #FFF0F5;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boys Set -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-media">
+                            <div class="product-badge limited">Limited Edition</div>
+                            <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" 
+                                 alt="Casual Weekend Set" class="img-fluid">
+                            <div class="product-actions">
+                                <button class="action-btn"><i class="fas fa-heart"></i></button>
+                                <button class="action-btn"><i class="fas fa-shopping-bag"></i></button>
+                                <button class="action-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4>Casual Weekend Set</h4>
+                            <div class="product-price">$69.99</div>
+                            <div class="product-colors mt-2">
+                                <span class="color-dot" style="background: #B8860B;"></span>
+                                <span class="color-dot" style="background: #556B2F;"></span>
+                                <span class="color-dot" style="background: #483D8B;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Age Categories -->
+            <div class="row g-4 mt-5">
+                <div class="col-lg-4">
+                    <div class="age-category">
+                        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1675&q=80" 
+                             alt="Baby (0-24 Months)" class="img-fluid">
+                        <div class="age-content">
+                            <h3>Baby</h3>
+                            <p>0-24 Months</p>
+                            <a href="#" class="btn btn-outline-light">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="age-category">
+                        <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" 
+                             alt="Toddler (2-4 Years)" class="img-fluid">
+                        <div class="age-content">
+                            <h3>Toddler</h3>
+                            <p>2-4 Years</p>
+                            <a href="#" class="btn btn-outline-light">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="age-category">
+                        <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80" 
+                             alt="Kids (4-12 Years)" class="img-fluid">
+                        <div class="age-content">
+                            <h3>Kids</h3>
+                            <p>4-12 Years</p>
+                            <a href="#" class="btn btn-outline-light">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seasonal Collection -->
+            <div class="seasonal-collection mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="season-banner">
+                            <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" 
+                                 alt="Spring Collection" class="img-fluid">
+                            <div class="season-content">
+                                <h2>Spring Collection 2025</h2>
+                                <p>Discover our latest collection of playful and elegant styles</p>
+                                <div class="season-features">
+                                    <div class="feature">
+                                        <i class="fas fa-leaf"></i>
+                                        <span>Eco-Friendly</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Safe Materials</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-tshirt"></i>
+                                        <span>Comfort First</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-light btn-lg mt-4">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Features -->
+            <div class="special-features mt-5">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-ruler"></i>
+                            </div>
+                            <h4>Perfect Fit</h4>
+                            <p>Size guide and easy returns for the perfect fit every time</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Quality Materials</h4>
+                            <p>Premium fabrics that are gentle on sensitive skin</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4>Fast Delivery</h4>
+                            <p>Quick and secure worldwide shipping</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h4>Easy Returns</h4>
+                            <p>30-day return policy for your peace of mind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Style Guide -->
+            <div class="style-guide mt-5">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="style-card">
+                            <div class="style-media">
+                                <img src="https://images.unsplash.com/photo-1624454002302-36b824d7bd0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" 
+                                     alt="Size Guide" class="img-fluid">
+                                <div class="style-content">
+                                    <h3>Size Guide</h3>
+                                    <p>Find the perfect fit for your little one</p>
+                                    <a href="#" class="btn btn-outline-light">View Guide</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="style-card">
+                            <div class="style-media">
+                                <img src="https://images.unsplash.com/photo-1617113930975-f9c7243ae527?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" 
+                                     alt="Care Instructions" class="img-fluid">
+                                <div class="style-content">
+                                    <h3>Care Guide</h3>
+                                    <p>Tips to keep clothes looking new longer</p>
+                                    <a href="#" class="btn btn-outline-light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer class="footer">
+        <div class="container-fluid px-lg-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="https://placehold.co/200x80/0B3C1A/FFD700.png?text=NOLIMITNOOR&font=playfair+display&bold=true" alt="NOLIMITNOOR" class="footer-logo">
+                        <p class="lead">Redefining luxury fashion with timeless elegance and unparalleled quality.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Shop</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Help</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">How to Order</a></li>
+                        <li><a href="#">How to Track</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6>Contact Us</h6>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Fashion Street, Lagos, nigeria</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>08156525157</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@nolimitnoor.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <p class="copyright"> 2025 NOLIMITNOOR. All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <div class="footer-extra">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & Conditions</a>
+                            <img src="https://placehold.co/200x50/0B3C1A/FFD700.png?text=Payment+Methods&font=playfair+display" alt="Payment Methods" class="payment-methods">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">₦0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Calculated at checkout</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cartTotal">₦0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-outline-dark w-100 mt-2">View Cart</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <button type="button" class="close-modal" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="product-gallery">
+                                <div class="main-image">
+                                    <img src="https://placehold.co/1200x1200/0B3C1A/FFD700.png?text=Product+Image&font=playfair+display" alt="Product Image" id="modalMainImage">
+                                </div>
+                                <div class="thumbnail-images" id="modalThumbnails"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-details">
+                                <h2 id="modalProductName"></h2>
+                                <div class="product-price">
+                                    <span class="current-price" id="modalProductPrice"></span>
+                                    <span class="original-price" id="modalOriginalPrice"></span>
+                                    <span class="discount-badge" id="modalDiscount"></span>
+                                </div>
+                                <div class="product-rating">
+                                    <div class="stars" id="modalRating"></div>
+                                    <span class="rating-count" id="modalReviewCount"></span>
+                                </div>
+                                <div class="product-description" id="modalProductDescription"></div>
+                                <div class="product-variations">
+                                    <div class="variation-group">
+                                        <label>Size</label>
+                                        <div class="size-options" id="modalSizeOptions"></div>
+                                    </div>
+                                    <div class="variation-group">
+                                        <label>Color</label>
+                                        <div class="color-options" id="modalColorOptions"></div>
+                                    </div>
+                                </div>
+                                <div class="product-quantity">
+                                    <label>Quantity</label>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus">-</button>
+                                        <input type="number" value="1" min="1" id="modalQuantity">
+                                        <button class="qty-btn plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn-primary" id="modalAddToCart">
+                                        Add to Cart
+                                    </button>
+                                    <button class="btn btn-outline-dark" id="modalAddToWishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="product-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-truck"></i>
+                                        <span>Free shipping on orders over ₦10000</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-undo"></i>
+                                        <span>30-day return policy</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Secure checkout</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collection Banner -->
+    <section class="collection-banner">
+        <div class="container-fluid px-0">
+            <div class="banner-grid">
+                <div class="banner-item large">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" 
+                         alt="Luxury Collection">
+                    <div class="banner-content">
+                        <h2>The Luxury Collection</h2>
+                        <p>Timeless Pieces for the Modern Wardrobe</p>
+                        <a href="#" class="btn btn-outline-light">Discover</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="https://images.unsplash.com/photo-1514989940723-425c7b97ccd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80" 
+                         alt="Evening Wear">
+                    <div class="banner-content">
+                        <h3>Evening Wear</h3>
+                        <a href="#" class="btn btn-outline-light">Shop Now</a>
+                    </div>
+                </div>
+                <div class="banner-item">
+                    <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" 
+                         alt="Accessories">
+                    <div class="banner-content">
+                        <h3>Accessories</h3>
+                        <a href="#" class="btn btn-outline-light">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

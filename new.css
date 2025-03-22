@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+.container{
+    display: flex;
+    
+}
+.logo ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding-left: 1000px;
+
+}
+.logo ul li{
+    margin: 10px;
+}
+.logo ul{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+.logo ul :hover{
+    color: black;
+}

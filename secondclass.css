@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    height: 50px;
+}
+
+.navLinks ul {
+    list-style: none;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.navBar ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.navBar ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.apparelLogo {
+    display: flex;
+    width: 115px;
+}
+
+.weAreComing{
+    width: 444px;
+    height: 217px;
+}
+
+.weAreComing span{
+    font-size: 64px;
+    font-weight: bolder;
+    line-height: 71px;
+    letter-spacing: 17px;
+}

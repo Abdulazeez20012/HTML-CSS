@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(234, 240, 238);
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    color:#54BD95
+}
+
+.navLinks ul{
+    width: 600px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    height: 100%;
+
+    a{
+    color: gray;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+.navLinks  a:hover{
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+.signUpButton{
+    display: flex;
+    background-color: #54BD95;
+    color: white;
+    border: none;
+    height: 40px;
+    justify-content: center;
+    align-items:center ;
+    border-radius: 10px ;
+    width:80px;
+
+    
+}
+
+.login {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items:center ;
+    gap:1rem;
+}
+
+.login  a{
+    text-decoration: none;
+    color: gray;
+
+}
+
+.login  a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.product{
+    display: flex;
+    padding-top: 64px;
+
+}
+
+.increaseProduct{
+    padding: 0 50px;
+    font-family: "JetBrains Mono", Inter, system-ui, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+}
+
+.productImage{
+    width:451px;
+    height:400px;
+    img{
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+}
+.text{
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.trialButton{
+    padding: 0 50px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.button{
+    color: white;
+    background-color: #54BD95;
+    border: none;
+    height: 62px;
+    border-radius: 40px;
+    width: 165px;
+}
+
+.play{
+    display: flex;
+    font: 14px "JetBrains Mono", Inter, system-ui, sans-serif;
+    width: 98px;
+    height: 22px;
+}
+
+.features{
+    padding-top: 70px;
+    text-align: center;
+}
+
+.features-img {
+    width: 34px;
+    height: 32px;
+    padding-left: 130px;
+    display: flex;
+    padding-top: 20px;
+    color: gray;
+}

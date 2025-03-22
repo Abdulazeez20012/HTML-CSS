@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEA Institute - Tech Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="az.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./OIP__4_-removebg-preview.png" alt="MEA Institute Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="az.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>MEA-INSTITUTE</h1>
+            <h3>Where Passion for Tech Turns to Innovations</h3>
+            <div class="hero-cta">
+                <a href="#courses" class="cta-button primary">Explore Courses</a>
+                <a href="#contact" class="cta-button secondary">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2><i class="fas fa-graduation-cap"></i> Welcome to MEA Institute</h2>
+            <p>MEA Institute is a tech school that offers a wide range of courses 
+                in the field of technology. Our courses are designed to help you 
+                learn and master the skills needed to succeed in the tech industry.</p>
+            <p>Our instructors are industry experts who are passionate about teaching 
+                and are committed to helping you achieve your goals. Join us today and take the first step 
+                towards a successful career in technology.</p>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3>1000+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>50+</h3>
+                    <p>Courses</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>98%</h3>
+                    <p>Success Rate</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="courses-section">
+            <h2><i class="fas fa-book"></i> Our Popular Courses</h2>
+            <div class="course-cards">
+                <div class="course-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Learn modern web technologies and build responsive websites.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-clock"></i> 12 Weeks</li>
+                        <li><i class="fas fa-signal"></i> Beginner to Advanced</li>
+                        <li><i class="fas fa-laptop"></i> Online/Offline</li>
+                    </ul>
+                    <a href="#" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Science</h3>
+                    <p>Master data analysis, machine learning, and AI fundamentals.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-clock"></i> 16 Weeks</li>
+                        <li><i class="fas fa-signal"></i> Intermediate</li>
+                        <li><i class="fas fa-laptop"></i> Online/Offline</li>
+                    </ul>
+                    <a href="#" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Design-thinking</h3>
+                    <p>understand methods and ways to solve problems.</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-clock"></i> 14 Weeks</li>
+                        <li><i class="fas fa-signal"></i> Advanced</li>
+                        <li><i class="fas fa-laptop"></i> Online/Offline</li>
+                    </ul>
+                    <a href="#" class="course-btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-section">
+            <div class="auth-container">
+                <div class="signup-box">
+                    <h2><i class="fas fa-user-plus"></i> Sign Up</h2>
+                    <form action="az.php" method="POST" class="auth-form">
+                        <div class="form-group">
+                            <input type="text" name="firstname" placeholder="First Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" placeholder="Last Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password2" placeholder="Confirm Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" name="submit"><i class="fas fa-paper-plane"></i> Sign Up</button>
+                    </form>
+                </div>
+
+                <div class="signin-box">
+                    <h2><i class="fas fa-sign-in-alt"></i> Sign In</h2>
+                    <form action="az.php" method="POST" class="auth-form">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <button type="submit" name="submit"><i class="fas fa-paper-plane"></i> Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3><i class="fas fa-paper-plane"></i> Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: info@meainstitute.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +234 8156525157</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: 123 sabo Street, saboyaba</p>
+            </div>
+            <div class="footer-social">
+                <h3><i class="fas fa-hashtag"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3><i class="fas fa-envelope-open-text"></i> Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>MEA Institute &copy; 2025 | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form handling
+        document.querySelectorAll('.auth-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button');
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    this.reset();
+                    setTimeout(() => {
+                        button.disabled = false;
+                        button.innerHTML = 'Submit';
+                    }, 1000);
+                }, 1000);
+            });
+        });
+
+        // Simple newsletter subscription
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button');
+                button.disabled = true;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    this.reset();
+                    setTimeout(() => {
+                        button.disabled = false;
+                        button.innerHTML = 'Subscribe';
+                    }, 1000);
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>
