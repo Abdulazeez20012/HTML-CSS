@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctor.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./OIP__9_-removebg-preview.png" alt="UKA Medical Center Logo">
+                UKA Medical Center
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                <li><a href="#"><i class="fas fa-clock"></i> Availability</a></li>
+                <li><a href="#"><i class="fas fa-user-edit"></i> Update Records</a></li>
+                <li><a href="#"><i class="fas fa-calendar-plus"></i> Schedule</a></li>
+                <li><a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome, Doctor</h1>
+            <p class="subtitle">Manage your appointments, availability, and patient records efficiently.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>View Appointments</h3>
+                <p>Check your upcoming appointments and manage schedules.</p>
+                <button class="btn">View Appointments</button>
+            </div>
+
+           
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Set Availability</h3>
+                <p>Update your availability for patient consultations.</p>
+                <button class="btn">Set Availability</button>
+            </div>
+
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <h3>Update Medical Records</h3>
+                <p>Modify and update patient medical records securely.</p>
+                <button class="btn">Update Records</button>
+            </div>
+
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-plus"></i>
+                </div>
+                <h3>Schedule Appointments</h3>
+                <p>Schedule new appointments for your patients.</p>
+                <button class="btn">Schedule Appointment</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

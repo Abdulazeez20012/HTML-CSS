@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./OIP__9_-removebg-preview.png" alt="UKA Medical Center Logo">
+                UKA Medical Center
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html" class="logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Welcome to Your Dashboard</h1>
+            <p class="subtitle">Manage your medical appointments, health records, and account settings in one convenient place.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Appointments</h3>
+                <p>View, schedule, or cancel your upcoming medical appointments with our healthcare providers.</p>
+                <button class="btn" onclick="window.location.href='appointments.html'">Manage Appointments</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-file-medical"></i>
+                </div>
+                <h3>Medical Records</h3>
+                <p>Access your health history, test results, and treatment plans in a secure environment.</p>
+                <button class="btn" onclick="window.location.href='view_records.html'">View Records</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-user-cog"></i>
+                </div>
+                <h3>Profile Settings</h3>
+                <p>Update your personal information, contact details, and communication preferences.</p>
+                <button class="btn" onclick="window.location.href='profile.html'">Edit Profile</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-comment-medical"></i>
+                </div>
+                <h3>Messages</h3>
+                <p>Communicate securely with your healthcare providers and receive important updates.</p>
+                <button class="btn" onclick="window.location.href='messages.html'">View Messages</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                </div>
+                <h3>Prescriptions</h3>
+                <p>Manage your current medications and request prescription renewals when needed.</p>
+                <button class="btn" onclick="window.location.href='prescriptions.html'">View Prescriptions</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <h3>Notifications</h3>
+                <p>Configure how you receive alerts about appointments, test results, and other updates.</p>
+                <button class="btn" onclick="window.location.href='notifications.html'">Notification Settings</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

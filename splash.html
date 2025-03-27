@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <link rel="stylesheet" href="splash.css"> 
+</head>
+<body>
+    <div class="splash-container">
+        <div class="logo-container">
+            <img src="./OIP__9_-removebg-preview.png" alt="UKA Medical Center Logo" class="logo">
+        </div>
+        <h1>Welcome to UKA Medical Center</h1>
+
+        <h2>Our mission is to provide the best medical care to our patients</h2>
+        <p>Book an appointment with our doctors today</p>
+        <button class="btn" onclick="redirectTologin()">Get Started</button>   
+        
+        
+        <div class="services-section">
+            <h3>Our Services Include</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h4>General Consultation</h4>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h4>Diagnosis</h4>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h4>Pharmacy</h4>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h4>Lab Services</h4>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h4>Emergency Services</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h4>Our team of doctors are highly trained and experienced in their respective fields</h4>
+            <h5>Our doctors are available 24/7 to provide the best medical care to our patients</h5>
+        </div>
+        
+        <div class="contact-section">
+            <h6>For more information, please contact us at:</h6>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <p>123-456-7890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <p>info@ukamedical.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <p>123 Medical Drive, Health City</p>
+                </div>
+    </div>
+
+    <script>
+        function redirectTologin() {
+            window.location.href = "sign_up.html"; 
+        }
+    </script>
+</body>
+</html>
